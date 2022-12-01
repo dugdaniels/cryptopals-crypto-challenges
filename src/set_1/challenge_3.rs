@@ -5,14 +5,14 @@ const LETTER_FREQUENCY: [f64; 27] = [
     0.00978, 0.02360, 0.00150, 0.01974, 0.00074, 0.19181, // v-z & space
 ];
 
-pub fn decypher(cypher: &str) -> String {
-    let cypher_bytes = hex::decode(cypher).unwrap();
+pub fn decipher(cipher: &str) -> String {
+    let cipher_bytes = hex::decode(cipher).unwrap();
 
     let mut message = String::new();
     let mut top_score = 0_f64;
 
     (0..=255_u8).for_each(|key| {
-        let text_bytes: Vec<u8> = cypher_bytes.iter().map(|&b| b ^ key).collect();
+        let text_bytes: Vec<u8> = cipher_bytes.iter().map(|&b| b ^ key).collect();
 
         let text = String::from_utf8_lossy(&text_bytes);
         let score = score(&text);
@@ -44,8 +44,8 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works() {
-        let cypher = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
-        assert_eq!(decypher(cypher), "Cooking MC's like a pound of bacon");
+    fn test_decipher_single_character_xor() {
+        let cipher = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
+        assert_eq!(decipher(cipher), "Cooking MC's like a pound of bacon");
     }
 }
