@@ -11,7 +11,7 @@ pub fn decipher(cipher: &str) -> String {
     let mut message = String::new();
     let mut top_score = 0_f64;
 
-    (0..=255_u8).for_each(|key| {
+    (0..=u8::MAX).for_each(|key| {
         let text_bytes: Vec<u8> = cipher_bytes.iter().map(|&b| b ^ key).collect();
 
         let text = String::from_utf8_lossy(&text_bytes);
