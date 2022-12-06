@@ -1,14 +1,6 @@
+use crate::utils::read_bytes;
 use aes::cipher::{generic_array::GenericArray, BlockDecrypt, KeyInit};
 use aes::Aes128;
-use std::fs;
-
-pub fn read_bytes(path: &str) -> Vec<u8> {
-    let base64_string = fs::read_to_string(path)
-        .map(|res| res.replace('\n', ""))
-        .unwrap();
-
-    base64::decode(base64_string).unwrap()
-}
 
 pub fn decrypt(path: &str, key: &[u8]) -> Vec<u8> {
     let bytes = read_bytes(path);

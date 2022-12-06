@@ -1,15 +1,7 @@
 use super::challenge_3::score;
-use std::fs;
+use crate::utils::read_bytes;
 
 const MAX_KEYSIZE: usize = 56;
-
-pub fn read_bytes(path: &str) -> Vec<u8> {
-    let base64_string = fs::read_to_string(path)
-        .map(|res| res.replace('\n', ""))
-        .unwrap();
-
-    base64::decode(base64_string).unwrap()
-}
 
 pub fn hamming_distance(x_bytes: &[u8], y_bytes: &[u8]) -> u32 {
     let mut distance = 0;
