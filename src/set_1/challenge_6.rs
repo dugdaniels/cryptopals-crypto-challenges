@@ -1,5 +1,4 @@
 use super::challenge_3::score;
-use base64;
 use std::fs;
 
 const MAX_KEYSIZE: usize = 56;
