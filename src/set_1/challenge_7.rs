@@ -7,7 +7,7 @@ pub fn decrypt(path: &str, key: &[u8]) -> Vec<u8> {
     let cipher = Aes128::new(GenericArray::from_slice(key));
 
     bytes
-        .chunks(16)
+        .chunks_exact(key.len())
         .flat_map(|chunk| {
             let mut block = GenericArray::clone_from_slice(chunk);
             cipher.decrypt_block(&mut block);
