@@ -21,7 +21,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn decrypt_works() {
+    fn test_c7() {
         let key = b"YELLOW SUBMARINE";
         let message = decrypt("src/set_1/files/challenge_7.txt", key);
 

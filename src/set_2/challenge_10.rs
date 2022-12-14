@@ -63,23 +63,10 @@ fn xor_bytes(x_bytes: &[u8], y_bytes: &[u8]) -> Vec<u8> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::utils::read_bytes;
     use hex_literal::hex;
 
     #[test]
-    fn decrypt_works() {
-        let key = b"YELLOW SUBMARINE";
-        let iv = hex!("00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00");
-        let ciphertext = read_bytes("src/set_2/files/challenge_10.txt");
-
-        let message = decrypt(&ciphertext, key, &iv);
-        let message_string = String::from_utf8_lossy(&message).to_string();
-
-        assert!(message_string.contains("Play that funky music"));
-    }
-
-    #[test]
-    fn encrypt_decrypt_works() {
+    fn test_c10() {
         let message = b"This not to be read";
         let key = b"YELLOW SUBMARINE";
         let iv = hex!("00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00");

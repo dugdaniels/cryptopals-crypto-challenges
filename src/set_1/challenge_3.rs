@@ -44,7 +44,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_decipher_single_character_xor() {
+    fn test_c3() {
         let cipher = "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736";
         assert_eq!(decipher(cipher), "Cooking MC's like a pound of bacon");
     }

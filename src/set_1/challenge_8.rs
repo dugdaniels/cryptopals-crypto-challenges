@@ -33,7 +33,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn detect_ecb_works() {
+    fn test_c8() {
         let result = detect_aes_ecb_encryption("src/set_1/files/challenge_8.txt", 16);
 
         assert!(result.is_some());

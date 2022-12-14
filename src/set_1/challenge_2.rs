@@ -1,4 +1,4 @@
-pub fn fixex_xor(x: &str, y: &str) -> String {
+pub fn fixed_xor(x: &str, y: &str) -> String {
     let x_bytes = hex::decode(x).unwrap();
     let y_bytes = hex::decode(y).unwrap();
 
@@ -16,11 +16,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_fixed_xor() {
+    fn test_c2() {
         let a = "1c0111001f010100061a024b53535009181c";
         let b = "686974207468652062756c6c277320657965";
         let result = "746865206b696420646f6e277420706c6179";
 
-        assert_eq!(fixex_xor(a, b), result);
+        assert_eq!(fixed_xor(a, b), result);
     }
 }

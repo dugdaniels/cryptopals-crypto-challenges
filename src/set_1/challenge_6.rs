@@ -100,17 +100,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn hamming_distance_works() {
-        let x = b"this is a test";
-        let y = b"wokka wokka!!!";
-
-        let distance = hamming_distance(x, y);
-
-        assert_eq!(distance, 37);
-    }
-
-    #[test]
-    fn crack_works() {
+    fn test_c6() {
         let key = break_repeating_key_xor("src/set_1/files/challenge_6.txt");
         let key_string = String::from_utf8_lossy(&key).to_string();
 

@@ -14,7 +14,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_repeating_key_xor() {
+    fn test_c5() {
         let text = "Burning 'em, if you ain't quick and nimble\nI go crazy when I hear a cymbal";
         let key = "ICE";
 

@@ -11,7 +11,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn pad_pkcs7_works() {
+    fn test_c9() {
         let data = b"YELLOW SUBMARINE";
         let padded = pad_pkcs7(data, 20);
 

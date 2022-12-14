@@ -27,7 +27,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_detect_single_char_xor() {
+    fn test_c4() {
         let text = detect_single_character_xor("src/set_1/files/challenge_4.txt");
         assert_eq!(text, "Now that the party is jumping\n");
     }
